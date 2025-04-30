@@ -5,13 +5,16 @@ import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
+import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import PersonPinIcon from '@mui/icons-material/PersonPin'
+import BreadcrumbsBar from '@/app/components/breadcrumbs';
+import { List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 
 const drawerWidth = 240;
 
@@ -37,13 +40,10 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{ 
     ],
 }));
 
-interface AppBarProps extends MuiAppBarProps {
-    open?: boolean;
-}
 
 const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== 'open',
-})<AppBarProps>(({ theme }) => ({
+})<{ open?: boolean }>(({ theme }) => ({
     backgroundColor: '#dfcebc',
     transition: theme.transitions.create(['margin', 'width'], {
         easing: theme.transitions.easing.sharp,
@@ -76,10 +76,6 @@ export default function PersistentDrawerLeft({ children }: Readonly<{ children: 
     const theme = useTheme();
     const [open, setOpen] = useState(false);
 
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
-
     const handleDrawerClose = () => {
         setOpen(false);
     };
@@ -89,16 +85,19 @@ export default function PersistentDrawerLeft({ children }: Readonly<{ children: 
     };
 
     return (
-        <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-            <AppBar position="fixed" open={open}>
-                <Toolbar sx={{ bgColor: 'secondary', elevation: 0 }} >
+        <Box className="flex">
+            <AppBar position="fixed" open={open} className="!bg-primary" sx={{ backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }} >
+                <Toolbar>
                     <IconButton color="inherit" aria-label="open drawer" onClick={toggleDrawer} edge="start" sx={[ { mr: 2, } ]}>
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        Persistent drawer
-                    </Typography>
+                    <div className="flex flex-col relative">
+                        <Typography className='flex'>
+                            SENSE  
+                        </Typography>
+                        <Typography className="absolute -right-4 top-3" fontSize={10} margin={0.5}>by</Typography>
+                        <img src="/logo/C logo.png" width={60} />
+                    </div>
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -112,18 +111,26 @@ export default function PersistentDrawerLeft({ children }: Readonly<{ children: 
                 }}
                 variant="persistent"
                 anchor="left"
-                open={open}
-            >
+                open={open} >
                 <DrawerHeader>
                     <IconButton onClick={handleDrawerClose}>
                         <ChevronLeftIcon />
                     </IconButton>
                 </DrawerHeader>
-                <Divider />
+                <List>
+                    <ListItem disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <PersonPinIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Clientes" />
+                        </ListItemButton>
+                    </ListItem>
+                </List>
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />
-
+                <BreadcrumbsBar />
                 {children}
             </Main>
         </Box>

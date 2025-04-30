@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Montserrat, Cinzel } from "next/font/google";
+import { Cinzel } from "next/font/google";
 import "@/app/globals.css";
+import { CssBaseline, StyledEngineProvider } from "@mui/material";
 
-const geistSans = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
+import localFont from 'next/font/local'
+
+const amsterdam = localFont({
+    src: '../fonts/Amsterdam.ttf',
+    variable: '--font-amsterdam',
+    display: 'swap',
+    weight: '400',  
+    style: 'normal',
 });
 
 const geistMono = Cinzel({
@@ -19,13 +25,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} >
-              {children}
+            <body className={`${amsterdam.variable} ${geistMono.variable} font-cinzel antialiased`} >
+                <StyledEngineProvider injectFirst>
+                    <CssBaseline />
+
+                    {children}
+                </StyledEngineProvider>
             </body>
         </html>
     );

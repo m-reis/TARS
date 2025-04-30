@@ -15,6 +15,10 @@ export default {
             secondary: "#e396a4",
             tertiary: "#dfcebc"
         },
+        fontFamily: {
+            amsterdam: ['var(--font-amsterdam)', 'sans-serif'],
+            cinzel:    ['var(--font-cinzel)',    'serif'],
+        },
     },
   },
   plugins: [],
