@@ -28,7 +28,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en">
-            <body className={`${amsterdam.variable} ${geistMono.variable} font-cinzel antialiased`} >
+            <body className={`${amsterdam.variable} ${geistMono.variable} font-cinzel antialiased bg-slate-100`} >
                 <StyledEngineProvider injectFirst>
                     <CssBaseline />
 

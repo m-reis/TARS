@@ -1,0 +1,27 @@
+.card {
+    @apply relative max-w-sm w-full p-6 rounded-2xl backdrop-blur-md shadow-lg overflow-hidden;
+  }
+  
+  .card::before,
+  .card::after {
+    content: "";
+    position: absolute;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 0;
+  }
+  
+  .card::before {
+    width: 10rem;
+    height: 10rem;
+    top: -2.5rem;
+    right: -2.5rem;
+  }
+  
+  .card::after {
+    width: 5rem;
+    height: 5rem;
+    top: -2.5rem;
+    right: 5rem;
+  }
+  

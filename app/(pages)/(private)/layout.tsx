@@ -65,11 +65,9 @@ const AppBar = styled(MuiAppBar, {
 }));
 
 const DrawerHeader = styled('div')(({ theme }) => ({
-    display: 'flex',
     alignItems: 'center',
     padding: theme.spacing(0, 1),
-    ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
+    ...theme.mixins.toolbar
 }));
 
 export default function PersistentDrawerLeft({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -86,16 +84,16 @@ export default function PersistentDrawerLeft({ children }: Readonly<{ children: 
 
     return (
         <Box className="flex">
-            <AppBar position="fixed" open={open} className="!bg-primary" sx={{ backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }} >
+            <AppBar elevation={0} position="fixed" open={open} className="!bg-primary" sx={{ backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }} >
                 <Toolbar>
                     <IconButton color="inherit" aria-label="open drawer" onClick={toggleDrawer} edge="start" sx={[ { mr: 2, } ]}>
                         <MenuIcon />
                     </IconButton>
                     <div className="flex flex-col relative">
-                        <Typography className='flex'>
+                        <Typography className='flex font-cenzel'>
                             SENSE  
                         </Typography>
-                        <Typography className="absolute -right-4 top-3" fontSize={10} margin={0.5}>by</Typography>
+                        <Typography className="absolute font-amsterdam -right-6 top-1" fontSize={15} margin={0.5}>by</Typography>
                         <img src="/logo/C logo.png" width={60} />
                     </div>
                 </Toolbar>
@@ -112,7 +110,8 @@ export default function PersistentDrawerLeft({ children }: Readonly<{ children: 
                 variant="persistent"
                 anchor="left"
                 open={open} >
-                <DrawerHeader>
+                <DrawerHeader className='flex justify-between justify-items-center'>
+                    <img src='/logo/C sublogo preta.png' width={50} />
                     <IconButton onClick={handleDrawerClose}>
                         <ChevronLeftIcon />
                     </IconButton>
