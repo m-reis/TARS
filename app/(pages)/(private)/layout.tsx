@@ -127,7 +127,7 @@ export default function PersistentDrawerLeft({ children }: Readonly<{ children: 
                     </ListItem>
                 </List>
             </Drawer>
-            <Main open={open}>
+            <Main className='html-body-content min-h-dvh' open={open}>
                 <DrawerHeader />
                 <BreadcrumbsBar />
                 {children}

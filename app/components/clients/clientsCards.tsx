@@ -5,24 +5,28 @@ import { PersonAdd, Groups  } from '@mui/icons-material';
 
 export default function ClientsCards(){
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
-            <div className={`${styles.card} bg-secondary/60 text-white`}>
-                <div className="flex items-center justify-between mb-2 z-10 relative">
-                    <div className="p-2 rounded-lg bg-white/20">
-                        <PersonAdd className="text-white" />
+        <div className="mb-5 grid grid-cols-1 gap-y-2 justify-center md:gap-y-0 md:grid-cols-2 sm:place-items-center">
+            <div className={`max-w-xs w-full p-2 rounded-md shadow-sm overflow-hidden bg-secondary/30 text-primary/80`}>
+                <div className="flex items-start relative">
+                    <div className="p-3 mr-3 rounded-lg bg-secondary/20">
+                        <PersonAdd className="text-secondary" />
+                    </div>
+                    <div>
+                        <div className="text-sm relative">Total de Clientes</div>
+                        <div className="text-xl font-semibold relative">42</div>
                     </div>
                 </div>
-                <div className="text-3xl font-semibold z-10 relative">42</div>
-                <div className="text-sm text-white/80 z-10 relative">Novos Clientes</div>
             </div>
-            <div className={`${styles.card} bg-primary/80 text-white`}>
-                <div className="flex items-center justify-between mb-2 z-10 relative">
-                    <div className="p-2 rounded-lg bg-[#DFCEBC]/20">
-                        <Groups className="text-white" />
+            <div className={`max-w-xs w-full p-2 rounded-md shadow-sm overflow-hidden bg-secondary/30 text-primary/80`}>
+                <div className="flex items-start relative">
+                    <div className="p-3 mr-3 rounded-lg bg-secondary/20">
+                        <Groups className="text-secondary" />
+                    </div>
+                    <div>
+                        <div className="text-sm relative">Total de Clientes</div>
+                        <div className="text-xl font-semibold relative">42</div>
                     </div>
                 </div>
-                <div className="text-3xl font-semibold z-10 relative">180</div>
-                <div className="text-sm text-white/80 z-10 relative">Total de Clientes</div>
             </div>
         </div>
     )
