@@ -2,13 +2,12 @@
 
 import { useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
+import Link  from 'next/link'
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import CssBaseline from '@mui/material/CssBaseline';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -90,11 +89,13 @@ export default function PersistentDrawerLeft({ children }: Readonly<{ children: 
                         <MenuIcon />
                     </IconButton>
                     <div className="flex flex-col relative">
-                        <Typography className='flex font-cenzel'>
-                            SENSE  
-                        </Typography>
-                        <Typography className="absolute font-amsterdam -right-6 top-1" fontSize={15} margin={0.5}>by</Typography>
-                        <img src="/logo/C logo.png" width={60} />
+                        <Link href="/" onClick={handleDrawerClose} >
+                            <Typography className='flex font-cenzel'>
+                                SENSE  
+                            </Typography>
+                            <Typography className="absolute font-amsterdam -right-6 top-1" fontSize={15} margin={0.5}>by</Typography>
+                            <img src="/logo/C logo.png" width={60} />
+                        </Link>
                     </div>
                 </Toolbar>
             </AppBar>
@@ -112,23 +113,27 @@ export default function PersistentDrawerLeft({ children }: Readonly<{ children: 
                 open={open} >
                 <DrawerHeader className='flex justify-between justify-items-center'>
                     <img src='/logo/C sublogo preta.png' width={50} />
+
                     <IconButton onClick={handleDrawerClose}>
                         <ChevronLeftIcon />
                     </IconButton>
                 </DrawerHeader>
                 <List>
-                    <ListItem disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                <PersonPinIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Clientes" />
-                        </ListItemButton>
-                    </ListItem>
+                    <Link  href="/clients" onClick={handleDrawerClose} >
+                        <ListItem disablePadding>
+                            <ListItemButton >
+                                <ListItemIcon>
+                                    <PersonPinIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Clientes" />
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
                 </List>
             </Drawer>
             <Main className='html-body-content min-h-dvh' open={open}>
                 <DrawerHeader />
+
                 <BreadcrumbsBar />
                 {children}
             </Main>

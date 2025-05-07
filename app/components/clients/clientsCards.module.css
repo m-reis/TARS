@@ -1,17 +1,19 @@
-
+.card{
+    position: relative;
+}
 .card::before,
 .card::after {
     content: "";
     position: absolute;
     border-radius: 9999px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.4);
     z-index: 0;
 }
   
 .card::before {
     width: 10rem;
     height: 10rem;
-    top: -2.5rem;
+    top: -5.5rem;
     right: -2.5rem;
 }
   
