@@ -74,9 +74,6 @@ export default function Home() {
             <DataGrid
                 rows={rows}
                 columns={columns}
-                initialState={{
-                    pagination: { paginationModel: {pageSize: 20} }
-                }}
                 checkboxSelection
                 className='rounded text-primary font-cinzel'
                 disableRowSelectionOnClick />

@@ -14,6 +14,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import PersonPinIcon from '@mui/icons-material/PersonPin'
 import BreadcrumbsBar from '@/app/components/breadcrumbs';
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import RouteProgressBar from '@/app/components/routeProgressBar';
 
 const drawerWidth = 240;
 

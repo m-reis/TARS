@@ -36,8 +36,6 @@ export default function BreadcrumbsBar() {
             );
     });
 
-    console.log(breadcrumbs)
-
     return (
         <Breadcrumbs aria-label="breadcrumb">
             {  breadcrumbs.length > 0 ? 
