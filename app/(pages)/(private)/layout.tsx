@@ -1,86 +1,19 @@
-'use client'
 
-import { useState } from 'react';
-import { styled, useTheme } from '@mui/material/styles';
+
 import Link  from 'next/link'
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import PersonPinIcon from '@mui/icons-material/PersonPin'
-import BreadcrumbsBar from '@/app/components/breadcrumbs';
+
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-import RouteProgressBar from '@/app/components/routeProgressBar';
 
-const drawerWidth = 240;
-
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{ open?: boolean }>(({ theme }) => ({
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: `-${drawerWidth}px`,
-    variants: [
-        {
-            props: ({ open }) => open,
-            style: {
-                transition: theme.transitions.create('margin', {
-                    easing: theme.transitions.easing.easeOut,
-                    duration: theme.transitions.duration.enteringScreen,
-                }),
-                marginLeft: 0,
-            },
-        },
-    ],
-}));
-
-
-const AppBar = styled(MuiAppBar, {
-    shouldForwardProp: (prop) => prop !== 'open',
-})<{ open?: boolean }>(({ theme }) => ({
-    backgroundColor: '#dfcebc',
-    transition: theme.transitions.create(['margin', 'width'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-    }),
-    variants: [
-        {
-            props: ({ open }) => open,
-            style: {
-                width: `calc(100% - ${drawerWidth}px)`,
-                marginLeft: `${drawerWidth}px`,
-                transition: theme.transitions.create(['margin', 'width'], {
-                    easing: theme.transitions.easing.easeOut,
-                    duration: theme.transitions.duration.enteringScreen,
-                }),
-            },
-        },
-    ],
-}));
-
-const DrawerHeader = styled('div')(({ theme }) => ({
-    alignItems: 'center',
-    padding: theme.spacing(0, 1),
-    ...theme.mixins.toolbar
-}));
 
 export default function PersistentDrawerLeft({ children }: Readonly<{ children: React.ReactNode }>) {
-    const theme = useTheme();
-    const [open, setOpen] = useState(false);
-
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
-
-    const toggleDrawer = () => {
-        setOpen(!open);
-    };
 
     return (
         <Box className="flex">
@@ -132,10 +65,9 @@ export default function PersistentDrawerLeft({ children }: Readonly<{ children: 
                     </Link>
                 </List>
             </Drawer>
-            <Main className='html-body-content min-h-dvh' open={open}>
+            <Main className='html-body-content min-h-dvh pt-0' open={open}>
                 <DrawerHeader />
 
-                <BreadcrumbsBar />
                 {children}
             </Main>
         </Box>
