@@ -21,7 +21,7 @@ export default function BreadcrumbsBar() {
         switch (part) {
             case 'clients':
                 icon = <PersonPinIcon className="mr-0.5" />;
-                labelBreads = 'Gernência de Clientes'
+                labelBreads = 'Gerência de Clientes'
             break;
         }
 

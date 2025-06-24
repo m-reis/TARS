@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Cinzel } from "next/font/google";
 import "@/app/globals.css";
-import { createTheme, CssBaseline, StyledEngineProvider, ThemeProvider } from "@mui/material";
 
 import localFont from 'next/font/local'
+import Providers from "@/app/components/layout/Providers";
 
 const amsterdam = localFont({
     src: '../fonts/Amsterdam.ttf',
@@ -26,17 +26,13 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-    const theme = createTheme(); // Isso usa o tema padrão do MUI
 
     return (
         <html lang="en">
             <body className={`${amsterdam.variable} ${geistMono.variable} font-cinzel antialiased bg-slate-100`} >
-                <StyledEngineProvider injectFirst>
-                    <ThemeProvider theme={theme}>
-                        <CssBaseline />
-                        {children}
-                    </ThemeProvider>
-                </StyledEngineProvider>
+                <Providers>
+                    {children}
+                </Providers>
             </body>
         </html>
     );
