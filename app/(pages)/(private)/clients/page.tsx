@@ -1,12 +1,12 @@
 'use client'
 
-import FredGrugPage from "@/app/components/fredGrugPage";
+import FredGrugPage from "@components/fredGrugPage";
 import { Button, Container, IconButton } from '@mui/material';
-import ClientsCards from '@/app/components/clients/clientsCards'
+import ClientsCards from '@components/clients/clientsCards'
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import { Delete, Edit, PersonAdd, GroupRemove, Block } from '@mui/icons-material';
+import { Delete, Edit, PersonAdd, BrowserUpdatedOutlined } from '@mui/icons-material';
 
 const columns: GridColDef<(typeof rows)[number]>[] = [
   {
@@ -35,7 +35,7 @@ const columns: GridColDef<(typeof rows)[number]>[] = [
   {
     field: ' ',
     align: 'center',
-    headerName: 'actions',
+    headerName: '',
     width: 100,
     sortable: false,
     filterable: false,
@@ -43,8 +43,9 @@ const columns: GridColDef<(typeof rows)[number]>[] = [
     renderCell: () => (
         <>
             <IconButton>
-                <Edit className='text-primary/80' />
+                <Edit className='text-primary/80 ' />
             </IconButton>
+
             <IconButton>
                 <Delete className='text-red-500' />
             </IconButton>
@@ -53,11 +54,10 @@ const columns: GridColDef<(typeof rows)[number]>[] = [
     renderHeader: () => (
         <>
             <IconButton>
-                <Block className='text-primary/80' />
+                <BrowserUpdatedOutlined className='text-primary/80 text-blue-500' />
             </IconButton>
-            <IconButton>
-                <GroupRemove className='text-red-500' />
-            </IconButton>
+
+            <IconButton />
         </>        
     )
   }

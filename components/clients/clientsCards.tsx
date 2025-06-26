@@ -1,4 +1,4 @@
-import styles from '@/app/components/clients/clientsCards.module.css';
+import styles from '@components/clients/clientsCards.module.css';
 
 import { PersonAdd, Groups  } from '@mui/icons-material';
 

@@ -1,10 +1,10 @@
-import { DrawerComponentsProps } from "@/app/types/drawerComponetsProps";
+import { DrawerComponentsProps } from "@models/drawerComponetsProps";
 import { Drawer, IconButton } from "@mui/material";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Image from "next/image";
 
 
-export default function SideMenuDrawer( { open, children, handleDrawerClose }: DrawerComponentsProps){
+export default function SideMenuDrawer( { open, children, handleDrawerClose }: Partial<DrawerComponentsProps>){
     return(
         <Drawer variant="persistent" anchor="left" open={open} className="w-drawer flex-shrink-0"
             slotProps={{

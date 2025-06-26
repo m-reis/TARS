@@ -1,4 +1,4 @@
-import BreadcrumbsBar from '@/app/components/layout/breadcrumbs';
+import BreadcrumbsBar from '@components/layout/breadcrumbs';
 import { ReactNode } from 'react';
 
 export default function FredGrugPage({ children } : Readonly<{ children?: ReactNode }>){

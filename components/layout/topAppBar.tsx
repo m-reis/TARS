@@ -1,11 +1,11 @@
 import MuiAppBar from '@mui/material/AppBar';
-import { drawerWidth } from '@/app/config/layout';
+import { drawerWidth } from '@lib/appConstants';
 import { styled } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import { IconButton, Typography } from '@mui/material';
 import Link from 'next/link';
 import MenuIcon from '@mui/icons-material/Menu';
-import { DrawerComponentsProps } from '@/app/types/drawerComponetsProps';
+import { DrawerComponentsProps } from '@models/drawerComponetsProps';
 import Image from 'next/image';
 
 const AppBar = styled(MuiAppBar, { shouldForwardProp: (prop) => prop !== 'open' })<{ open: boolean }>(({ theme, open }) => ({

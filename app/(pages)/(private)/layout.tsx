@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import DrawerLayputPage from '@/app/components/DrawerLayoutPage';
+import DrawerLayputPage from '@components/DrawerLayoutPage';
 
 
 

@@ -14,11 +14,22 @@
   }
 }
 
+@font-face {
+  font-family: 'Amsterdam';
+  src: url('/fonts/Amsterdam.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-amsterdam{
+  font-family: 'Amsterdam', var(--font-cinzel);
+}
+
 body {
   color: var(--foreground);
   background: #ffffff;
-  font-family: var(--font-cinzel);
-
+  font-family: 'Amsterdam', var(--font-cinzel);
 }
 
 .debug{

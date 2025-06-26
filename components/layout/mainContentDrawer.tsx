@@ -1,5 +1,5 @@
-import { drawerWidth } from "@/app/config/layout";
-import { DrawerComponentsProps } from "@/app/types/drawerComponetsProps";
+import { drawerWidth } from "@lib/appConstants";
+import { DrawerComponentsProps } from "@models/drawerComponetsProps";
 import { styled } from "@mui/material";
 
 
