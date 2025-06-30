@@ -1,7 +1,8 @@
+'use client'
 import { drawerWidth } from "@lib/appConstants";
-import { DrawerComponentsProps } from "@models/drawerComponetsProps";
-import { styled } from "@mui/material";
-
+import { DrawerComponentsProps } from "@/models/props/drawerComponetsProps";
+import { LinearProgress, styled } from "@mui/material";
+import { globalLoading } from "@/lib/globalLoading";
 
 const Main = styled('main', {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -23,11 +24,17 @@ const Main = styled('main', {
 }));
 
 export default function MainContentDrawer({open, children}: DrawerComponentsProps){
+    const loading = globalLoading((state) => state.loading);
+
     return(
-        <Main className='html-body-content min-h-dvh p-0' open={open}>
+        <Main className='html-body-content flex flex-col  min-h-dvh p-0' open={open}>
             <div className="flex items-center px-2 h-14 md:h-16"></div>
 
-            {children}
+            <div className="flex-1">
+                { loading &&  <LinearProgress className='h-0.5' color="primary" /> }
+
+                {children}
+            </div>
         </Main>
     )
 }

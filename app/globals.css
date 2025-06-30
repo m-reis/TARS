@@ -40,13 +40,58 @@ body {
     content: '';
     position: absolute;
     inset: 0; /* top: 0; right: 0; bottom: 0; left: 0 */
-    background: url('/logo/C logo.png') no-repeat center bottom 2rem;
-    background-size: 35%;
+    /* background: url('/logo/C logo.png') no-repeat center bottom 2rem; */
+    background: url('/logo/C logo.png') no-repeat top 6rem center;
+    background-size: 95%;
     opacity: 0.7;
     z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .html-body-content::before {
+    background-size: 35%;
+    background-position: bottom 2rem center;
+  }
 }
  
 .html-body-content {
     position: relative;
     z-index: 1;
+}
+
+.custom-datagrid {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+.custom-datagrid .MuiDataGrid-columnHeader {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+.custom-datagrid .MuiDataGrid-row:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* ou ajuste com base no seu tema */
+}
+
+.custom-datagrid .MuiDataGrid-row.Mui-selected {
+  background-color: rgba(25, 118, 210, 0.08) !important; /* azul padrão MUI */
+}
+
+.custom-datagrid .MuiDataGrid-row.Mui-selected:hover {
+  background-color: rgba(25, 118, 210, 0.15) !important;
+}
+
+.MuiDataGrid-toolbar button {
+  color: #3b82f6 !important;
+}
+
+.MuiDataGrid-toolbar button:hover {
+  color: #2563eb !important;
+}
+
+/* Toolbar (onde fica o campo de busca e botões) */
+.MuiDataGrid-toolbar {
+  min-height: 36px !important;
+  padding: 4px 8px !important;
+  font-size: 12px !important;
 }

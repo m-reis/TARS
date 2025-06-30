@@ -1,4 +1,4 @@
-import { DrawerComponentsProps } from "@models/drawerComponetsProps";
+import { DrawerComponentsProps } from "@/models/props/drawerComponetsProps";
 import { Drawer, IconButton } from "@mui/material";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Image from "next/image";

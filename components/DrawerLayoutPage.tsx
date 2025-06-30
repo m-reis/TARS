@@ -1,12 +1,12 @@
 'use client'
 
 import { ReactNode, useState } from "react";
-import SideMenuDrawer from "./layout/sideMenuDrawer";
+import SideMenuDrawer from "./private/sideMenuDrawer";
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import Link from "next/link";
 import { Home, PersonPinCircleOutlined } from "@mui/icons-material";
-import TopAppBar from "./layout/topAppBar";
-import MainContentDrawer from "./layout/mainContentDrawer";
+import TopAppBar from "./private/topAppBar";
+import MainContentDrawer from "./private/mainContentDrawer";
 
 
 

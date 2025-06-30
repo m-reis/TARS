@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import { IconButton, Typography } from '@mui/material';
 import Link from 'next/link';
 import MenuIcon from '@mui/icons-material/Menu';
-import { DrawerComponentsProps } from '@models/drawerComponetsProps';
+import { DrawerComponentsProps } from '@/models/props/drawerComponetsProps';
 import Image from 'next/image';
 
 const AppBar = styled(MuiAppBar, { shouldForwardProp: (prop) => prop !== 'open' })<{ open: boolean }>(({ theme, open }) => ({

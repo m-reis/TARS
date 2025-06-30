@@ -39,7 +39,7 @@ export default function BreadcrumbsBar() {
     });
 
     return (
-        <Breadcrumbs aria-label="breadcrumb">
+        <Breadcrumbs className='px-5 py-3' aria-label="breadcrumb">
             {  breadcrumbs.length > 0 ? 
                 breadcrumbs 
             : 

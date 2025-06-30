@@ -7,14 +7,12 @@ export default function Providers({ children }: { children: ReactNode }) {
     const theme = createTheme();
 
     return (
-        <>
-            <StyledEngineProvider injectFirst>
-                <ThemeProvider theme={theme}>
-                    <CssBaseline />
+        <StyledEngineProvider injectFirst>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
 
-                    {children}
-                </ThemeProvider>
-            </StyledEngineProvider>
-        </>
+                {children}
+            </ThemeProvider>
+        </StyledEngineProvider>
     );
 }

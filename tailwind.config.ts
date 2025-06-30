@@ -22,6 +22,10 @@ export default {
             width: {
                 drawer: '240px'
             },
+             backgroundSize: {
+                '35': '35%',
+                '90': '90%',
+            },
         },
     },
     plugins: [],

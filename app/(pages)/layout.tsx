@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Cinzel } from "next/font/google";
 import "@/app/globals.css";
 
-import Providers from "@components/layout/Providers";
+import Providers from "@components/Providers";
 import { ReactNode } from "react";
 
 const geistMono = Cinzel({
