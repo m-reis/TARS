@@ -6,7 +6,7 @@ import { Button, IconButton } from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { useState } from "react";
 
-export default function TableGridClients({ clientes, onEditClient}: TableClientProps){
+export default function TableGridClients({ clientes, onEditClient, onAddClient}: TableClientProps){
 
     const [paginationModel, setPaginationModel] = useState({
         pageSize: 10,
@@ -71,7 +71,7 @@ export default function TableGridClients({ clientes, onEditClient}: TableClientP
                         <BrowserUpdatedOutlined className='text-blue-500' />
                     </IconButton>
 
-                    <Button className=' px-2 mx-2' variant="contained" startIcon={<PersonAdd />}>
+                    <Button className=' px-2 mx-2' onClick={() => onAddClient() } variant="contained" startIcon={<PersonAdd />}>
                         Cadastrar
                     </Button>
                 </>        

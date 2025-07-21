@@ -4,6 +4,7 @@ import { Client } from '@models/iClient';
 const ClientService = {
   getAll: async (): Promise<Client[]> => {
     const response = await api.get('/clientes');
+    
     return response.data;
   },
 
