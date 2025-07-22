@@ -9,7 +9,7 @@ export default function DialogFormClients( { client, modaStateOpened, handleClos
 
     return (
         <>
-            <DialogDefault size='sm' title="Formulário de clientes" opened={modaStateOpened} hadleOpen={() => {}} handleClose={handleClose} >
+            <DialogDefault size='sm' title="Formulário de Clientes" opened={modaStateOpened} hadleOpen={() => {}} handleClose={handleClose} >
                 <form className='px-5 pt-4'>
                     <TextField required id="nome" name="nome" autoComplete="off" label="Nome" fullWidth variant="standard"
                         slotProps={{

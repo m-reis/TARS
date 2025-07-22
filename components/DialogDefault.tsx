@@ -27,11 +27,16 @@ export default function DialogDefault( { children, title ,opened, handleClose, s
             slots={{ transition: Transition }}
             onClose={() =>  handleClose() }>
 
-            <DialogTitle className='relative title-dialog bg-primary flex flex-row text-tertiary/60 p-3 text-sm items-center'>
+            <DialogTitle className='italic relative title-dialog bg-primary flex flex-row text-tertiary/60 p-3 text-sm items-center'>
                 <Image className='mr-2' src="/logo/C logo.png" width={70} height={8} alt='Charm' />
                 
                 <ArrowForwardIos className='text-sm mr-2' />
-                {title}
+                {typeof title === 'string' ? (
+                    <span>
+                        <span className="font-amsterdam">{title[0]}</span>
+                        {title.slice(1)}
+                    </span>
+                ) : null}
             </DialogTitle>
 
             <DialogContent className='p-1 bg-primary/30'>
