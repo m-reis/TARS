@@ -1,6 +1,6 @@
 import DialogDefault from '@/components/DialogDefault';
 import { Client } from '@models/iClient';
-import { TextField } from '@mui/material';
+import { Button, DialogActions, TextField } from '@mui/material';
 
 export default function DialogFormClients( { client, modaStateOpened, handleClose }: { client?: Client, modaStateOpened : boolean, handleClose : () => void } ){
     
@@ -9,20 +9,19 @@ export default function DialogFormClients( { client, modaStateOpened, handleClos
 
     return (
         <>
-            <DialogDefault size='md' title="Formulário de clientes" opened={modaStateOpened} hadleOpen={ () => {} } handleClose={handleClose} >
-                <form>
-                    <TextField
-                        autoFocus
-                        required
-                        margin="dense"
-                        id="name"
-                        name="email"
-                        label="Email Address"
-                        type="email"
-                        fullWidth
-                        variant="standard"
-                        />
+            <DialogDefault size='sm' title="Formulário de clientes" opened={modaStateOpened} hadleOpen={() => {}} handleClose={handleClose} >
+                <form className='px-5 pt-4'>
+                    <TextField required id="nome" name="nome" autoComplete="off" label="Nome" fullWidth variant="standard"
+                        slotProps={{
+                            input: {
+                                className: 'text-sm'
+                            }
+                        }} />
                 </form>
+                <DialogActions className='pt-3'>
+                    <Button color='error'>Fechar</Button>
+                    <Button type="submit">Salvar</Button>
+                </DialogActions>
             </DialogDefault>
         </>
     )
