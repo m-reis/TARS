@@ -88,3 +88,7 @@ body {
 .MuiDataGrid-toolbar button:hover {
   color: #2563eb !important;
 }
+
+.MuiInputLabel-root {
+  font-size: 13px;
+}
